@@ -1,5 +1,3 @@
-import http from 'http';
-
 // Fonction d'aide pour tester l'application
 export function createMessage(message: string): string {
   return `<div class="app__message">\n    <h1>${message}</h1>\n</div>`;
