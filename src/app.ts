@@ -1,19 +1,10 @@
 // npm i http
 import http from "http";
 import fs from "fs";
+import { generateHtml } from "./utils";
 const server = http.createServer((req, res) => {
   if (req.url === "/") {
-    const html = `
-            <html>
-                <head>
-                    <title>My First Page</title>
-                    <link rel="stylesheet" href="/public/css/styles.css"/>
-                </head>
-                <div class="app__message">
-                    <h1>Hello World</h1>
-                </div>
-            </html>
-        `;
+    const html = generateHtml("Hello World from Node.js and Render!");
     res.writeHead(200, { "Content-Type": "text/html" });
     res.end(html);
   } else if (req.url === "/public/css/styles.css") {
